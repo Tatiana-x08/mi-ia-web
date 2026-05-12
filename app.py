@@ -10,7 +10,7 @@ st.write("Dibuja un número del 0 al 9 en el recuadro negro.")
 # 1. Cargar el modelo guardado
 @st.cache_resource
 def load_my_model():
-return tf.keras.models.load_model('modelo_mnist.keras')
+      return tf.keras.models.load_model('modelo_mnist.keras')
 model = load_my_model()
 # 2. Crear el lienzo (Canvas) para dibujar
 canvas_result = st_canvas(
