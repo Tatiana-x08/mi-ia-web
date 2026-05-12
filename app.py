@@ -14,7 +14,7 @@ return tf.keras.models.load_model('modelo_mnist.keras')
 model = load_my_model()
 # 2. Crear el lienzo (Canvas) para dibujar
 canvas_result = st_canvas(
-fill_color="white", stroke_width=20,
+fill_color="white", stroke_width=30,
 stroke_color="white",
 background_color="black", height=280, width=280,
 drawing_mode="freedraw", key="canvas",
@@ -25,7 +25,8 @@ if canvas_result.image_data is not None:
 img =
 cv2.resize(canvas_result.image_data.astype('uint8'), (28,
 28))
-img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+img = cv2.cvtColor(img, cv2.COLOR_RGBA2GRAY)
+img = 255 - img
 img = img / 255.0 # Normalizar
 # Predicción
 pred = model.predict(img.reshape(1, 28, 28, 1))
