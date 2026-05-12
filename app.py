@@ -6,8 +6,7 @@ import numpy as np
 # Configuración de la página
 st.set_page_config(page_title="IA Digit Recognizer")
 st.title("Reconocedor de Dígitos en Tiempo Real")
-st.write("Dibuja un número del 0 al 9 en el recuadro
-negro.")
+st.write("Dibuja un número del 0 al 9 en el recuadro negro.")
 # 1. Cargar el modelo guardado
 @st.cache_resource
 def load_my_model():
