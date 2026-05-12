@@ -26,8 +26,6 @@ if canvas_result.image_data is not None:
 
     img = cv2.cvtColor(img, cv2.COLOR_RGBA2GRAY)
 
-    img = 255 - img
-
     img = img / 255.0
 
     pred = model.predict(img.reshape(1, 28, 28, 1))
